@@ -1133,7 +1133,7 @@
         // ========== PRODUCTS ==========
         async function loadProducts() {
             try {
-                const snapshot = await db.collection('products').orderBy('createdAt', 'desc').get();
+                const snapshot = await db.collection('products').get();
                 products = snapshot.docs.map(doc => ({
                     id: doc.id,
                     ...doc.data()
@@ -1517,4 +1517,5 @@
         window.addEventListener('DOMContentLoaded', loadProducts);
     </script>
 </body>
+
 </html>
